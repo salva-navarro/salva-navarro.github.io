@@ -1,77 +1,312 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Salva Navarro — Enterprise PKI Architect</title>
-
-  <meta name="description" content="Salva Navarro is an Enterprise PKI Architect specialized in Public Key Infrastructure design, Microsoft ADCS architecture and cryptographic governance in Spain.">
-  <meta name="keywords" content="Salva Navarro, PKI Architect, Enterprise PKI, Microsoft ADCS, Cryptographic Architecture, Certificate Lifecycle Management, Spain">
-  <meta name="author" content="Salva Navarro">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salva Navarro | Enterprise PKI Architect</title>
+  <meta name="description" content="Portfolio profesional de Salva Navarro, Enterprise PKI Architect especializado en diseño de infraestructuras PKI empresariales, Microsoft ADCS y gobernanza criptográfica.">
+  <meta name="keywords" content="Salva Navarro, PKI Architect, Enterprise PKI, Microsoft ADCS, Zero Trust PKI, Cryptographic Governance, Spain">
+  <meta name="author" content="Salva Navarro">
   <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://salva-navarro.github.io/">
+  <link rel="canonical" href="https://salva-navarro.github.io/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Salva Navarro | Enterprise PKI Architect">
+  <meta property="og:description" content="Arquitectura PKI empresarial, Microsoft ADCS multi-tier y gobernanza criptográfica de alto nivel.">
+  <meta property="og:url" content="https://salva-navarro.github.io/">
+  <meta property="og:image" content="https://salva-navarro.github.io/assets/og-image.svg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Salva Navarro | Enterprise PKI Architect">
+  <meta name="twitter:description" content="Portfolio profesional: arquitectura PKI empresarial, diseño resiliente y enfoque técnico puro.">
+  <meta name="twitter:image" content="https://salva-navarro.github.io/assets/og-image.svg">
+
   <style>
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #111b2e;
+      --surface: #16243c;
+      --surface-2: #1c2f4d;
+      --text: #eaf1ff;
+      --muted: #9bb0d0;
+      --primary: #4cc9f0;
+      --primary-strong: #00b4d8;
+      --accent: #90f2b5;
+      --border: #2a3f63;
+      --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      --maxw: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
       margin: 0;
-      background-color: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.6;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 85% -10%, #1f467e 0%, rgba(11, 18, 32, 0) 35%),
+        radial-gradient(circle at 0% 15%, #0d5c6d 0%, rgba(11, 18, 32, 0) 40%),
+        var(--bg);
+      line-height: 1.65;
     }
 
     .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 20px;
+      width: min(100% - 2rem, var(--maxw));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      background: rgba(11, 18, 32, 0.86);
+      border-bottom: 1px solid rgba(76, 201, 240, 0.15);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand span { color: var(--primary); }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.35rem 0.6rem;
+      border-radius: 8px;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--text);
+      background: rgba(76, 201, 240, 0.12);
+    }
+
+    .hero {
+      padding: 5.6rem 0 3.2rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.4rem;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .panel {
+      background: linear-gradient(160deg, rgba(28, 47, 77, 0.94), rgba(22, 36, 60, 0.93));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      display: inline-block;
     }
 
     h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
+      margin: 0;
+      line-height: 1.18;
+      font-size: clamp(1.9rem, 4.2vw, 3rem);
+      max-width: 18ch;
     }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin: 1rem 0 1.5rem;
+      max-width: 60ch;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      text-decoration: none;
+      display: inline-block;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      padding: 0.72rem 1rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--primary), var(--primary-strong));
+      color: #042033;
+    }
+
+    .btn-primary:hover { filter: brightness(1.08); }
+
+    .btn-secondary {
+      color: var(--text);
+      border-color: var(--border);
+      background: rgba(76, 201, 240, 0.07);
+    }
+
+    .btn-secondary:hover { background: rgba(76, 201, 240, 0.16); }
+
+    .kpis {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .kpis li {
+      background: rgba(76, 201, 240, 0.08);
+      border: 1px solid rgba(76, 201, 240, 0.19);
+      border-radius: 12px;
+      padding: 0.9rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .kpis strong {
+      color: var(--text);
+      display: block;
+      font-size: 1.12rem;
+      margin-bottom: 0.2rem;
+    }
+
+    section { padding: 1.2rem 0 0.8rem; }
 
     h2 {
-      margin-top: 50px;
-      font-size: 1.5rem;
-      border-bottom: 1px solid #334155;
-      padding-bottom: 10px;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      margin: 0 0 1rem;
     }
 
-    p {
-      font-size: 1.05rem;
+    .section-intro {
+      color: var(--muted);
+      margin-top: -0.25rem;
+      margin-bottom: 1.1rem;
+      max-width: 70ch;
     }
 
-    ul {
-      padding-left: 20px;
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    li {
-      margin-bottom: 8px;
+    .card {
+      background: rgba(17, 27, 46, 0.87);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem;
     }
 
-    .tagline {
-      color: #94a3b8;
-      font-size: 1.1rem;
-      margin-bottom: 40px;
+    .card h3 { margin-top: 0; margin-bottom: 0.45rem; }
+
+    .card p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
     }
 
-    .footer {
-      margin-top: 80px;
-      font-size: 0.9rem;
-      color: #64748b;
+    .timeline {
+      display: grid;
+      gap: 0.9rem;
     }
 
-    a {
-      color: #38bdf8;
-      text-decoration: none;
+    .timeline-item {
+      border-left: 2px solid rgba(76, 201, 240, 0.4);
+      padding: 0.3rem 0 0.35rem 1rem;
+      background: rgba(17, 27, 46, 0.72);
+      border-radius: 0 10px 10px 0;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .timeline-item h3 {
+      margin: 0;
+      font-size: 1.02rem;
+    }
+
+    .timeline-item p {
+      margin: 0.35rem 0 0;
+      color: var(--muted);
+    }
+
+    .quote {
+      background: linear-gradient(165deg, rgba(76, 201, 240, 0.14), rgba(17, 27, 46, 0.8));
+      border: 1px solid rgba(76, 201, 240, 0.28);
+      border-radius: 14px;
+      padding: 1rem 1.1rem;
+      color: var(--text);
+      font-style: italic;
+      margin-top: 0.8rem;
+    }
+
+    .cta {
+      margin: 2.2rem 0 1rem;
+      padding: 1.2rem;
+      background: linear-gradient(120deg, rgba(144, 242, 181, 0.12), rgba(76, 201, 240, 0.16));
+      border: 1px solid rgba(144, 242, 181, 0.32);
+      border-radius: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cta p { margin: 0; color: var(--text); }
+
+    footer {
+      margin: 2rem 0 2.2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 950px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+      .nav { align-items: flex-start; }
+      .nav-links { gap: 0.35rem; }
+      .hero { padding-top: 4.2rem; }
+      .hero-card, .panel { padding: 1.1rem; }
     }
   </style>
 
-  <!-- Structured Data for SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -82,66 +317,187 @@
     "sameAs": [
       "https://github.com/salva-navarro"
     ],
+    "knowsAbout": [
+      "Public Key Infrastructure",
+      "Microsoft ADCS",
+      "Certificate Lifecycle Management",
+      "Cryptographic Governance",
+      "Zero Trust PKI",
+      "Post-Quantum Readiness"
+    ],
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "Spain"
     }
   }
   </script>
-
 </head>
-
 <body>
-  <div class="container">
-
-    <h1>Salva Navarro</h1>
-    <p class="tagline">
-      Enterprise Public Key Infrastructure Architect | Cryptographic Architecture | Spain
-    </p>
-
-    <section>
-      <h2>Technical Focus</h2>
-      <p>
-        Specialized in the design and hardening of enterprise-grade Public Key Infrastructure (PKI) environments,
-        with a focus on secure architectural patterns, scalability and cryptographic governance.
-      </p>
-      <ul>
-        <li>Enterprise PKI Architecture Design</li>
-        <li>Microsoft ADCS Multi-Tier Architecture</li>
-        <li>Certificate Lifecycle Management (CLM)</li>
-        <li>Cryptographic Governance & Policy Design</li>
-        <li>Zero Trust PKI Integration</li>
-        <li>Post-Quantum Readiness Assessment</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Positioning</h2>
-      <p>
-        Focused exclusively on technical architecture and implementation patterns for resilient,
-        high-assurance PKI infrastructures.
-      </p>
-      <p>
-        No generic cybersecurity content. No marketing narrative.
-        Pure architectural depth.
-      </p>
-    </section>
-
-    <section>
-      <h2>Publications & Technical Notes</h2>
-      <p>
-        Technical articles and design documentation available via GitHub repositories.
-      </p>
-      <ul>
-        <li><a href="https://github.com/salva-navarro">GitHub Profile</a></li>
-      <li><a href="https://github.com/salva-navarro/enterprise-pki-architecture-principles">Enterprise PKI Architecture Principles</a></li>
-      </ul>
-    </section>
-
-    <div class="footer">
-      © 2026 Salva Navarro — Enterprise PKI Architect — Spain
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">Salva <span>Navarro</span></div>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#publicaciones">Publicaciones</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
     </div>
+  </header>
 
-  </div>
+  <main class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <article class="hero-card">
+        <span class="eyebrow">Enterprise PKI Architect</span>
+        <h1 id="hero-title">Arquitectura PKI empresarial robusta para entornos de alta exigencia</h1>
+        <p class="lead">
+          Soy Salva Navarro, especialista en diseño, evolución y hardening de infraestructuras PKI empresariales.
+          Mi enfoque combina profundidad técnica, gobernanza criptográfica y patrones de arquitectura resilientes,
+          con una orientación estricta a calidad operativa y seguridad real.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://github.com/salva-navarro" target="_blank" rel="noopener noreferrer">Ver GitHub</a>
+          <a class="btn btn-secondary" href="#contacto">Hablemos</a>
+        </div>
+      </article>
+
+      <aside class="panel" aria-label="Resumen profesional">
+        <ul class="kpis">
+          <li>
+            <strong>Especialidad principal</strong>
+            Arquitectura de Public Key Infrastructure (PKI) para organizaciones enterprise.
+          </li>
+          <li>
+            <strong>Stack técnico clave</strong>
+            Microsoft ADCS multi-tier, CLM, políticas criptográficas y marcos Zero Trust.
+          </li>
+          <li>
+            <strong>Ámbito geográfico</strong>
+            España, con orientación a estándares y prácticas internacionales.
+          </li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="sobre-mi" aria-labelledby="sobre-mi-title">
+      <h2 id="sobre-mi-title">Sobre mí</h2>
+      <p class="section-intro">
+        Mi posicionamiento es claro: arquitectura técnica de alto nivel para PKI empresarial, sin contenido genérico ni narrativa comercial.
+        Trabajo sobre decisiones estructurales que impactan disponibilidad, seguridad y mantenibilidad a largo plazo.
+      </p>
+      <div class="timeline">
+        <article class="timeline-item">
+          <h3>Diseño y hardening de arquitecturas PKI enterprise</h3>
+          <p>Definición de modelos escalables, segmentación por niveles de confianza y controles de seguridad sobre ciclo de vida de certificados.</p>
+        </article>
+        <article class="timeline-item">
+          <h3>Gobernanza criptográfica aplicada al negocio</h3>
+          <p>Transformación de requisitos regulatorios y de riesgo en políticas técnicas operables y auditables.</p>
+        </article>
+        <article class="timeline-item">
+          <h3>Preparación para escenarios de evolución criptográfica</h3>
+          <p>Análisis de impacto y estrategia para transición ordenada hacia modelos de mayor resiliencia, incluyendo readiness post-quantum.</p>
+        </article>
+      </div>
+      <p class="quote">“No diseño PKI para hoy: diseño PKI para que siga siendo segura y operable dentro de 5-10 años.”</p>
+    </section>
+
+    <section id="expertise" aria-labelledby="expertise-title">
+      <h2 id="expertise-title">Expertise técnico</h2>
+      <p class="section-intro">
+        Áreas en las que aporto mayor valor en arquitectura, gobernanza y toma de decisiones técnicas críticas.
+      </p>
+      <div class="grid">
+        <article class="card">
+          <h3>Enterprise PKI Architecture</h3>
+          <p>Topologías jerárquicas robustas, modelos de confianza y estrategias de continuidad para servicios de certificación.</p>
+        </article>
+        <article class="card">
+          <h3>Microsoft ADCS Multi-Tier</h3>
+          <p>Diseño por capas, separación de funciones críticas y criterios de hardening para minimizar superficie de exposición.</p>
+        </article>
+        <article class="card">
+          <h3>Certificate Lifecycle Management</h3>
+          <p>Automatización, control y trazabilidad del ciclo de vida de certificados para reducir riesgo operativo.</p>
+        </article>
+        <article class="card">
+          <h3>Cryptographic Governance</h3>
+          <p>Políticas y estándares internos alineados con necesidades de negocio, cumplimiento y resiliencia técnica.</p>
+        </article>
+        <article class="card">
+          <h3>Zero Trust PKI Integration</h3>
+          <p>Integración de identidades, dispositivos y servicios bajo principios de verificación continua y mínimo privilegio.</p>
+        </article>
+        <article class="card">
+          <h3>Post-Quantum Readiness</h3>
+          <p>Evaluación de exposición criptográfica y construcción de hoja de ruta para transición progresiva.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="servicios" aria-labelledby="servicios-title">
+      <h2 id="servicios-title">Cómo puedo aportar valor</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Assessment de arquitectura PKI</h3>
+          <p>Revisión estructural del entorno actual, identificación de riesgos y propuesta priorizada de mejoras.</p>
+        </article>
+        <article class="card">
+          <h3>Diseño de roadmap técnico</h3>
+          <p>Plan de evolución realista para modernizar capacidades PKI sin comprometer operación ni cumplimiento.</p>
+        </article>
+        <article class="card">
+          <h3>Soporte en decisiones críticas</h3>
+          <p>Acompañamiento técnico en decisiones de diseño que afectan seguridad, escalabilidad y sostenibilidad.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publicaciones" aria-labelledby="publicaciones-title">
+      <h2 id="publicaciones-title">Publicaciones y recursos</h2>
+      <p class="section-intro">Contenido técnico y notas de arquitectura disponibles en GitHub.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>GitHub Profile</h3>
+          <p>
+            Acceso a repositorios, documentación técnica y líneas de trabajo.
+            <br><a href="https://github.com/salva-navarro" target="_blank" rel="noopener noreferrer">github.com/salva-navarro</a>
+          </p>
+        </article>
+        <article class="card">
+          <h3>Enterprise PKI Architecture Principles</h3>
+          <p>
+            Principios de diseño para construir infraestructuras PKI robustas y escalables.
+            <br><a href="https://github.com/salva-navarro/enterprise-pki-architecture-principles" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+          </p>
+        </article>
+        <article class="card">
+          <h3>Línea editorial</h3>
+          <p>Profundidad técnica, rigor arquitectónico y foco total en implementación real, sin ruido comercial.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" aria-labelledby="contacto-title">
+      <h2 id="contacto-title">Contacto</h2>
+      <p class="section-intro">
+        Si necesitas reforzar o evolucionar tu arquitectura PKI, estaré encantado de revisar tu caso y ayudarte a definir el siguiente paso.
+      </p>
+      <div class="cta">
+        <p>Disponible para colaboraciones técnicas y proyectos de arquitectura PKI.</p>
+        <a class="btn btn-primary" href="https://github.com/salva-navarro" target="_blank" rel="noopener noreferrer">Contactar vía GitHub</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> Salva Navarro — Enterprise PKI Architect</span>
+      <span>España · Arquitectura PKI · Gobernanza criptográfica</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
