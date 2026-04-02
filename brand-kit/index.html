@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Kit · Salva Navarro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --brand-primary:   #2F4F9F;
+      --brand-secondary: #D4A017;
+      --brand-dark:      #1C1C1C;
+      --brand-light:     #FFFFFF;
+      --brand-primary-tint:  #4B70C9;
+      --brand-primary-shade: #1E3470;
+      --brand-secondary-tint:  #E8BC45;
+      --brand-secondary-shade: #A07C10;
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body:    'Inter', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); background: #f4f6fb; color: var(--brand-dark); }
+
+    header {
+      background: var(--brand-primary);
+      color: var(--brand-light);
+      padding: 2.5rem 2rem 2rem;
+      border-bottom: 4px solid var(--brand-secondary);
+    }
+    header h1 { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; }
+    header p  { margin-top: .5rem; opacity: .85; font-size: .95rem; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+    section { margin-bottom: 3rem; }
+    section h2 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--brand-primary);
+      border-left: 4px solid var(--brand-secondary);
+      padding-left: .75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Color Tokens ────────────────────────────────────── */
+    .color-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .color-chip {
+      width: 140px; border-radius: 10px; overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    }
+    .color-chip .swatch { height: 72px; }
+    .color-chip .info { background: #fff; padding: .6rem .8rem; font-size: .78rem; }
+    .color-chip .info strong { display: block; font-family: var(--font-heading); font-size: .85rem; }
+    .color-chip .info code  { color: #666; }
+
+    /* ── Logos ───────────────────────────────────────────── */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+    .logo-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.25rem;
+      display: flex; flex-direction: column; align-items: center; gap: .75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07);
+      transition: transform .15s;
+    }
+    .logo-card:hover { transform: translateY(-3px); }
+    .logo-card img { width: 100%; max-height: 80px; object-fit: contain; }
+    .logo-card span { font-size: .72rem; color: #888; text-align: center; }
+
+    /* ── Typography ──────────────────────────────────────── */
+    .type-stack { display: flex; flex-direction: column; gap: 1.5rem; }
+    .type-row { background: #fff; border-radius: 10px; padding: 1.25rem 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+    .type-row small { display: block; color: #999; font-size: .72rem; margin-bottom: .35rem; }
+
+    /* ── Download CTA ────────────────────────────────────── */
+    .cta {
+      display: inline-block;
+      background: var(--brand-secondary);
+      color: var(--brand-dark);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      padding: .75rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: .5rem;
+      transition: background .15s;
+    }
+    .cta:hover { background: var(--brand-secondary-tint); }
+
+    /* ── Assets quick-access ─────────────────────────────── */
+    .asset-links { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .asset-link {
+      background: #fff;
+      border: 1.5px solid #e3e8f0;
+      border-radius: 8px;
+      padding: .55rem 1rem;
+      font-size: .85rem;
+      text-decoration: none;
+      color: var(--brand-primary);
+      font-weight: 500;
+      transition: border-color .15s, background .15s;
+    }
+    .asset-link:hover { border-color: var(--brand-primary); background: #eef2ff; }
+
+    /* ── CDN / Usage ─────────────────────────────────────── */
+    pre {
+      background: var(--brand-dark);
+      color: #e2e8f0;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      font-size: .82rem;
+      overflow-x: auto;
+      line-height: 1.7;
+    }
+    code { font-family: 'Consolas', monospace; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Brand Kit · Salva Navarro</h1>
+  <p>Sistema de identidad corporativa · PKI Tools / SnPKI IdentiCert Suite</p>
+</header>
+
+<main>
+
+  <!-- ── Color Tokens ───────────────────────────────────── -->
+  <section>
+    <h2>Paleta de Color Oficial</h2>
+    <div class="color-grid">
+      <div class="color-chip">
+        <div class="swatch" style="background:#2F4F9F"></div>
+        <div class="info"><strong>Primary</strong><code>#2F4F9F</code></div>
+      </div>
+      <div class="color-chip">
+        <div class="swatch" style="background:#1E3470"></div>
+        <div class="info"><strong>Primary Shade</strong><code>#1E3470</code></div>
+      </div>
+      <div class="color-chip">
+        <div class="swatch" style="background:#4B70C9"></div>
+        <div class="info"><strong>Primary Tint</strong><code>#4B70C9</code></div>
+      </div>
+      <div class="color-chip">
+        <div class="swatch" style="background:#D4A017; border:1px solid #e0e0e0"></div>
+        <div class="info"><strong>Secondary</strong><code>#D4A017</code></div>
+      </div>
+      <div class="color-chip">
+        <div class="swatch" style="background:#A07C10"></div>
+        <div class="info"><strong>Secondary Shade</strong><code>#A07C10</code></div>
+      </div>
+      <div class="color-chip">
+        <div class="swatch" style="background:#E8BC45; border:1px solid #e0e0e0"></div>
+        <div class="info"><strong>Secondary Tint</strong><code>#E8BC45</code></div>
+      </div>
+      <div class="color-chip">
+        <div class="swatch" style="background:#1C1C1C"></div>
+        <div class="info"><strong>Dark</strong><code>#1C1C1C</code></div>
+      </div>
+      <div class="color-chip">
+        <div class="swatch" style="background:#FFFFFF; border:1px solid #e0e0e0"></div>
+        <div class="info"><strong>Light</strong><code>#FFFFFF</code></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Logos Preview ──────────────────────────────────── -->
+  <section>
+    <h2>Logos — Vista Previa (Estilo Moderno)</h2>
+    <div class="logo-grid" id="logoGrid">
+      <!-- Se rellena con JS desde los SVG -->
+    </div>
+    <script>
+      const logos = ['logo_001','logo_002','logo_003','logo_004','logo_005',
+                     'logo_006','logo_007','logo_008','logo_009','logo_010'];
+      const grid = document.getElementById('logoGrid');
+      logos.forEach(name => {
+        const card = document.createElement('div');
+        card.className = 'logo-card';
+        card.innerHTML = `<img src="01_LOGO_VARIATIONS/style_modern/${name}.svg" alt="${name}" loading="lazy"><span>${name}</span>`;
+        grid.appendChild(card);
+      });
+    </script>
+  </section>
+
+  <!-- ── Typography ────────────────────────────────────── -->
+  <section>
+    <h2>Tipografía</h2>
+    <div class="type-stack">
+      <div class="type-row">
+        <small>Heading · Montserrat 700 · Display</small>
+        <p style="font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:700;color:#2F4F9F">PKI Tools Suite</p>
+      </div>
+      <div class="type-row">
+        <small>Subheading · Montserrat 600</small>
+        <p style="font-family:'Montserrat',sans-serif;font-size:1.25rem;font-weight:600">Gestión de certificados digitales</p>
+      </div>
+      <div class="type-row">
+        <small>Body · Inter 400</small>
+        <p style="font-family:'Inter',sans-serif;font-size:1rem">Identidad, seguridad y trazabilidad para entornos corporativos exigentes.</p>
+      </div>
+      <div class="type-row">
+        <small>Caption / Code · Monospace</small>
+        <p style="font-family:'Consolas',monospace;font-size:.875rem;color:#666">CN=Usuario, OU=RRHH, O=Ibermutua, C=ES</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Acceso Rápido a Assets ─────────────────────────── -->
+  <section>
+    <h2>Acceso a Assets</h2>
+    <div class="asset-links">
+      <a class="asset-link" href="01_LOGO_VARIATIONS/style_modern/logo_001.svg">📐 Logo Principal (SVG)</a>
+      <a class="asset-link" href="01_LOGO_VARIATIONS/style_classic/logo_001.svg">🏛️ Logo Clásico (SVG)</a>
+      <a class="asset-link" href="01_LOGO_VARIATIONS/style_minimalist/logo_001.svg">✦ Logo Minimalista (SVG)</a>
+      <a class="asset-link" href="02_COLOR_PALETTES/palette_01_primary.json">🎨 Paleta JSON (Primary)</a>
+      <a class="asset-link" href="05_ICON_SETS/">🔒 Icon Set (SVG)</a>
+      <a class="asset-link" href="06_PATTERNS/">🔷 Patterns (SVG)</a>
+      <a class="asset-link" href="07_EVALUATION_DATA/evaluation_structure.json">📊 Criterios IA</a>
+      <a class="asset-link" href="04_MOCKUPS/showcase.html">🖼️ Showcase</a>
+    </div>
+  </section>
+
+  <!-- ── CDN Usage ──────────────────────────────────────── -->
+  <section>
+    <h2>Uso como Referencia (CDN · GitHub Pages)</h2>
+    <pre><code>/* CSS — variables de marca */
+:root {
+  --brand-primary:   #2F4F9F;
+  --brand-secondary: #D4A017;
+  --brand-dark:      #1C1C1C;
+  --brand-light:     #FFFFFF;
+}
+
+/* SVG logo desde GitHub Pages */
+&lt;img src="https://salva-navarro.github.io/brand-kit/01_LOGO_VARIATIONS/style_modern/logo_001.svg" /&gt;
+
+/* Paleta JSON (fetch) */
+fetch('https://salva-navarro.github.io/brand-kit/02_COLOR_PALETTES/palette_01_primary.json')
+  .then(r => r.json())
+  .then(tokens => console.log(tokens));</code></pre>
+  </section>
+
+  <!-- ── Download ───────────────────────────────────────── -->
+  <section>
+    <h2>Descarga Completa</h2>
+    <p style="margin-bottom:.75rem;color:#555;font-size:.9rem">Todos los assets: 393 archivos · 125 logos · 18 paletas · 120+ iconos · 90 patrones</p>
+    <a class="cta" href="https://github.com/salva-navarro/salva-navarro.github.io/raw/main/brand-kit/PKI_Tools_SuperPack_AI_v2.zip">⬇ Descargar SuperPack AI v2 (.zip)</a>
+  </section>
+
+</main>
+</body>
+</html>
