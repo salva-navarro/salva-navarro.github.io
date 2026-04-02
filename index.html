@@ -1,503 +1,336 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Salva Navarro | Enterprise PKI Architect</title>
-  <meta name="description" content="Portfolio profesional de Salva Navarro, Enterprise PKI Architect especializado en diseño de infraestructuras PKI empresariales, Microsoft ADCS y gobernanza criptográfica.">
-  <meta name="keywords" content="Salva Navarro, PKI Architect, Enterprise PKI, Microsoft ADCS, Zero Trust PKI, Cryptographic Governance, Spain">
-  <meta name="author" content="Salva Navarro">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://salva-navarro.github.io/">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Salva Navarro | Enterprise PKI Architect">
-  <meta property="og:description" content="Arquitectura PKI empresarial, Microsoft ADCS multi-tier y gobernanza criptográfica de alto nivel.">
-  <meta property="og:url" content="https://salva-navarro.github.io/">
-  <meta property="og:image" content="https://salva-navarro.github.io/assets/og-image.svg">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Salva Navarro | Enterprise PKI Architect">
-  <meta name="twitter:description" content="Portfolio profesional: arquitectura PKI empresarial, diseño resiliente y enfoque técnico puro.">
-  <meta name="twitter:image" content="https://salva-navarro.github.io/assets/og-image.svg">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salva Navarro | PKI Architect Portfolio</title>
+  <meta name="description" content="Portfolio técnico de Salva Navarro: arquitectura PKI enterprise, gobernanza criptográfica y demos interactivas." />
+  <meta name="author" content="Salva Navarro" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0b1220;
-      --bg-soft: #111b2e;
-      --surface: #16243c;
-      --surface-2: #1c2f4d;
-      --text: #eaf1ff;
-      --muted: #9bb0d0;
-      --primary: #4cc9f0;
-      --primary-strong: #00b4d8;
-      --accent: #90f2b5;
-      --border: #2a3f63;
-      --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-      --maxw: 1120px;
+      --ink: #f5f8ff;
+      --muted: #b6c2d9;
+      --bg0: #0a101b;
+      --bg1: #101c2f;
+      --bg2: #172945;
+      --accent: #4fd1c5;
+      --accent2: #f2b45a;
+      --line: #2a4168;
+      --ok: #3ecf8e;
+      --warn: #f2b45a;
+      --bad: #ff6b6b;
+      --maxw: 1140px;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
-      color: var(--text);
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--ink);
       background:
-        radial-gradient(circle at 85% -10%, #1f467e 0%, rgba(11, 18, 32, 0) 35%),
-        radial-gradient(circle at 0% 15%, #0d5c6d 0%, rgba(11, 18, 32, 0) 40%),
-        var(--bg);
-      line-height: 1.65;
+        radial-gradient(1200px 600px at 120% -10%, #2a4d88 0%, transparent 55%),
+        radial-gradient(850px 500px at -10% 0%, #1c5b63 0%, transparent 55%),
+        linear-gradient(160deg, var(--bg0), var(--bg1) 55%, var(--bg2));
+      min-height: 100vh;
     }
 
-    .container {
-      width: min(100% - 2rem, var(--maxw));
-      margin-inline: auto;
-    }
+    .container { width: min(100% - 2rem, var(--maxw)); margin: 0 auto; }
 
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 50;
+      background: rgba(10, 16, 27, 0.82);
       backdrop-filter: blur(8px);
-      background: rgba(11, 18, 32, 0.86);
-      border-bottom: 1px solid rgba(76, 201, 240, 0.15);
+      border-bottom: 1px solid rgba(79, 209, 197, 0.2);
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.9rem 0;
-      gap: 1rem;
-    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .85rem 0; }
+    .brand { font-weight: 700; letter-spacing: .04em; }
+    .brand span { color: var(--accent); }
+    .links { display: flex; flex-wrap: wrap; gap: .65rem; }
+    .links a { color: var(--muted); text-decoration: none; font-size: .92rem; padding: .35rem .6rem; border-radius: 8px; }
+    .links a:hover { color: var(--ink); background: rgba(79, 209, 197, .12); }
 
-    .brand {
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    .brand span { color: var(--primary); }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      justify-content: flex-end;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.95rem;
-      padding: 0.35rem 0.6rem;
-      border-radius: 8px;
-      transition: color 0.2s ease, background 0.2s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--text);
-      background: rgba(76, 201, 240, 0.12);
-    }
-
-    .hero {
-      padding: 5.6rem 0 3.2rem;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 1.4rem;
-      align-items: stretch;
-    }
-
-    .hero-card,
+    .hero { padding: 5.4rem 0 2.5rem; display: grid; grid-template-columns: 1.2fr .8fr; gap: 1rem; }
     .panel {
-      background: linear-gradient(160deg, rgba(28, 47, 77, 0.94), rgba(22, 36, 60, 0.93));
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      padding: 1.5rem;
+      border: 1px solid var(--line);
+      background: linear-gradient(155deg, rgba(23,41,69,.88), rgba(11,19,34,.86));
+      border-radius: 16px;
+      padding: 1.2rem;
+      box-shadow: 0 14px 35px rgba(0,0,0,.28);
     }
 
-    .eyebrow {
-      color: var(--accent);
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      margin-bottom: 0.7rem;
-      display: inline-block;
-    }
+    .kicker { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 0 0 .45rem; }
+    h1 { margin: 0; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.12; max-width: 17ch; }
+    .lead { color: var(--muted); margin: 1rem 0 1.35rem; max-width: 62ch; }
 
-    h1 {
-      margin: 0;
-      line-height: 1.18;
-      font-size: clamp(1.9rem, 4.2vw, 3rem);
-      max-width: 18ch;
-    }
-
-    .lead {
-      font-size: 1.08rem;
-      color: var(--muted);
-      margin: 1rem 0 1.5rem;
-      max-width: 60ch;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
+    .actions { display: flex; flex-wrap: wrap; gap: .65rem; }
     .btn {
       text-decoration: none;
-      display: inline-block;
-      border: 1px solid transparent;
       border-radius: 10px;
-      padding: 0.72rem 1rem;
+      padding: .7rem .95rem;
       font-weight: 600;
-      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      display: inline-block;
+      transition: transform .18s ease, filter .18s ease;
     }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #052826; background: linear-gradient(90deg, var(--accent), #7be2d9); }
+    .btn-ghost { color: var(--ink); border-color: var(--line); background: rgba(79,209,197,.1); }
 
-    .btn-primary {
-      background: linear-gradient(90deg, var(--primary), var(--primary-strong));
-      color: #042033;
-    }
-
-    .btn-primary:hover { filter: brightness(1.08); }
-
-    .btn-secondary {
-      color: var(--text);
-      border-color: var(--border);
-      background: rgba(76, 201, 240, 0.07);
-    }
-
-    .btn-secondary:hover { background: rgba(76, 201, 240, 0.16); }
-
-    .kpis {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 0.9rem;
-    }
-
-    .kpis li {
-      background: rgba(76, 201, 240, 0.08);
-      border: 1px solid rgba(76, 201, 240, 0.19);
+    .stats { display: grid; gap: .7rem; }
+    .stat {
+      border: 1px solid rgba(79,209,197,.22);
+      background: rgba(79,209,197,.08);
       border-radius: 12px;
-      padding: 0.9rem;
+      padding: .8rem;
       color: var(--muted);
-      font-size: 0.95rem;
     }
+    .stat strong { display: block; color: var(--ink); margin-bottom: .18rem; }
 
-    .kpis strong {
-      color: var(--text);
-      display: block;
-      font-size: 1.12rem;
-      margin-bottom: 0.2rem;
-    }
+    section { padding: .8rem 0 1rem; }
+    h2 { margin: 0 0 .75rem; font-size: clamp(1.3rem,2.5vw,1.9rem); }
+    .intro { margin: 0 0 1rem; color: var(--muted); }
 
-    section { padding: 1.2rem 0 0.8rem; }
+    .grid-3 { display: grid; gap: .9rem; grid-template-columns: repeat(3,minmax(0,1fr)); }
+    .card { border: 1px solid var(--line); border-radius: 14px; background: rgba(12,23,40,.8); padding: .95rem; }
+    .card h3 { margin: 0 0 .45rem; }
+    .card p { margin: 0; color: var(--muted); font-size: .95rem; }
 
-    h2 {
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      margin: 0 0 1rem;
-    }
+    .timeline { display: grid; gap: .75rem; }
+    .step { border-left: 2px solid rgba(79,209,197,.4); padding: .25rem 0 .25rem .9rem; background: rgba(12,23,40,.65); border-radius: 0 10px 10px 0; }
+    .step h3 { margin: 0; font-size: 1rem; }
+    .step p { margin: .25rem 0 0; color: var(--muted); }
 
-    .section-intro {
-      color: var(--muted);
-      margin-top: -0.25rem;
-      margin-bottom: 1.1rem;
-      max-width: 70ch;
-    }
+    .repos { display: grid; gap: .8rem; grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .repo { border: 1px solid var(--line); border-radius: 14px; background: rgba(14,26,46,.86); padding: .9rem; }
+    .repo h3 { margin: 0 0 .4rem; }
+    .repo p { margin: 0 0 .55rem; color: var(--muted); }
+    .repo a { color: var(--accent); text-decoration: none; font-size: .94rem; }
 
-    .grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .card {
-      background: rgba(17, 27, 46, 0.87);
-      border: 1px solid var(--border);
+    .demo-wrap { display: grid; gap: .8rem; grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .demo {
+      border: 1px solid var(--line);
       border-radius: 14px;
-      padding: 1rem;
+      background: rgba(13,24,42,.9);
+      padding: .95rem;
     }
-
-    .card h3 { margin-top: 0; margin-bottom: 0.45rem; }
-
-    .card p {
+    label { display: block; font-size: .9rem; margin: .55rem 0 .25rem; color: var(--muted); }
+    input, textarea {
+      width: 100%;
+      background: #0b172a;
+      color: var(--ink);
+      border: 1px solid #36527f;
+      border-radius: 10px;
+      padding: .6rem .65rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .9rem;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    .demo button {
+      margin-top: .7rem;
+      border: none;
+      border-radius: 10px;
+      padding: .62rem .85rem;
+      background: linear-gradient(90deg, var(--accent2), #ffd188);
+      color: #2d1a00;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .output {
+      margin-top: .7rem;
+      border: 1px dashed #45679f;
+      border-radius: 10px;
+      padding: .65rem;
+      min-height: 48px;
       color: var(--muted);
-      margin: 0;
-      font-size: 0.95rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .88rem;
+      white-space: pre-wrap;
     }
 
-    .timeline {
-      display: grid;
-      gap: 0.9rem;
+    footer { padding: 1.6rem 0 2rem; color: var(--muted); font-size: .92rem; }
+
+    .fade { opacity: 0; transform: translateY(14px); animation: rise .6s ease forwards; }
+    .fade:nth-child(2){ animation-delay: .12s; }
+    .fade:nth-child(3){ animation-delay: .24s; }
+    @keyframes rise { to { opacity:1; transform: translateY(0);} }
+
+    @media (max-width: 980px) {
+      .hero, .repos, .demo-wrap { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr 1fr; }
     }
-
-    .timeline-item {
-      border-left: 2px solid rgba(76, 201, 240, 0.4);
-      padding: 0.3rem 0 0.35rem 1rem;
-      background: rgba(17, 27, 46, 0.72);
-      border-radius: 0 10px 10px 0;
-    }
-
-    .timeline-item h3 {
-      margin: 0;
-      font-size: 1.02rem;
-    }
-
-    .timeline-item p {
-      margin: 0.35rem 0 0;
-      color: var(--muted);
-    }
-
-    .quote {
-      background: linear-gradient(165deg, rgba(76, 201, 240, 0.14), rgba(17, 27, 46, 0.8));
-      border: 1px solid rgba(76, 201, 240, 0.28);
-      border-radius: 14px;
-      padding: 1rem 1.1rem;
-      color: var(--text);
-      font-style: italic;
-      margin-top: 0.8rem;
-    }
-
-    .cta {
-      margin: 2.2rem 0 1rem;
-      padding: 1.2rem;
-      background: linear-gradient(120deg, rgba(144, 242, 181, 0.12), rgba(76, 201, 240, 0.16));
-      border: 1px solid rgba(144, 242, 181, 0.32);
-      border-radius: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .cta p { margin: 0; color: var(--text); }
-
-    footer {
-      margin: 2rem 0 2.2rem;
-      border-top: 1px solid var(--border);
-      padding-top: 1rem;
-      color: var(--muted);
-      font-size: 0.92rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 950px) {
-      .hero { grid-template-columns: 1fr; }
-      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
     @media (max-width: 640px) {
-      .grid { grid-template-columns: 1fr; }
-      .nav { align-items: flex-start; }
-      .nav-links { gap: 0.35rem; }
-      .hero { padding-top: 4.2rem; }
-      .hero-card, .panel { padding: 1.1rem; }
+      .grid-3 { grid-template-columns: 1fr; }
     }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Salva Navarro",
-    "jobTitle": "Enterprise PKI Architect",
-    "url": "https://salva-navarro.github.io",
-    "sameAs": [
-      "https://github.com/salva-navarro"
-    ],
-    "knowsAbout": [
-      "Public Key Infrastructure",
-      "Microsoft ADCS",
-      "Certificate Lifecycle Management",
-      "Cryptographic Governance",
-      "Zero Trust PKI",
-      "Post-Quantum Readiness"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "Spain"
-    }
-  }
-  </script>
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
-      <div class="brand">Salva <span>Navarro</span></div>
-      <nav class="nav-links" aria-label="Navegación principal">
-        <a href="#sobre-mi">Sobre mí</a>
+      <div class="brand">SALVA <span>NAVARRO</span></div>
+      <nav class="links">
+        <a href="#sobre">Sobre mí</a>
         <a href="#expertise">Expertise</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#publicaciones">Publicaciones</a>
+        <a href="#repos">Repos</a>
+        <a href="#demos">Demos</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <section class="hero" aria-labelledby="hero-title">
-      <article class="hero-card">
-        <span class="eyebrow">Enterprise PKI Architect</span>
-        <h1 id="hero-title">Arquitectura PKI empresarial robusta para entornos de alta exigencia</h1>
-        <p class="lead">
-          Soy Salva Navarro, especialista en diseño, evolución y hardening de infraestructuras PKI empresariales.
-          Mi enfoque combina profundidad técnica, gobernanza criptográfica y patrones de arquitectura resilientes,
-          con una orientación estricta a calidad operativa y seguridad real.
-        </p>
+    <section class="hero" id="sobre">
+      <article class="panel fade">
+        <p class="kicker">Enterprise PKI Architect</p>
+        <h1>Arquitectura PKI que aguanta auditoría, escala y cambio criptográfico.</h1>
+        <p class="lead">Soy Salva Navarro. Trabajo en diseño y evolución de plataformas PKI empresariales con foco en decisiones de arquitectura que siguen siendo válidas a 5-10 años: hardening, gobernanza, resiliencia operativa y readiness post-quantum.</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://github.com/salva-navarro" target="_blank" rel="noopener noreferrer">Ver GitHub</a>
-          <a class="btn btn-secondary" href="#contacto">Hablemos</a>
+          <a class="btn btn-ghost" href="https://github.com/salva-navarro/Tools-Hub" target="_blank" rel="noopener noreferrer">Explorar Portfolio Hub</a>
         </div>
       </article>
-
-      <aside class="panel" aria-label="Resumen profesional">
-        <ul class="kpis">
-          <li>
-            <strong>Especialidad principal</strong>
-            Arquitectura de Public Key Infrastructure (PKI) para organizaciones enterprise.
-          </li>
-          <li>
-            <strong>Stack técnico clave</strong>
-            Microsoft ADCS multi-tier, CLM, políticas criptográficas y marcos Zero Trust.
-          </li>
-          <li>
-            <strong>Ámbito geográfico</strong>
-            España, con orientación a estándares y prácticas internacionales.
-          </li>
-        </ul>
+      <aside class="panel fade">
+        <div class="stats">
+          <div class="stat"><strong>Núcleo de valor</strong> Diseño PKI enterprise con enfoque operativo real.</div>
+          <div class="stat"><strong>Stack principal</strong> ADCS multi-tier, CLM, políticas criptográficas, Zero Trust.</div>
+          <div class="stat"><strong>Modo de trabajo</strong> Principios de arquitectura + tooling práctico para ejecución.</div>
+        </div>
       </aside>
     </section>
 
-    <section id="sobre-mi" aria-labelledby="sobre-mi-title">
-      <h2 id="sobre-mi-title">Sobre mí</h2>
-      <p class="section-intro">
-        Mi posicionamiento es claro: arquitectura técnica de alto nivel para PKI empresarial, sin contenido genérico ni narrativa comercial.
-        Trabajo sobre decisiones estructurales que impactan disponibilidad, seguridad y mantenibilidad a largo plazo.
-      </p>
+    <section id="expertise">
+      <h2>Expertise Técnico</h2>
+      <p class="intro">Áreas donde aporto mayor impacto en decisiones de seguridad, confianza y continuidad.</p>
+      <div class="grid-3">
+        <article class="card fade"><h3>Enterprise PKI Architecture</h3><p>Jerarquías de confianza robustas, segmentación por dominios y reducción de blast radius.</p></article>
+        <article class="card fade"><h3>Microsoft ADCS Multi-Tier</h3><p>Diseño por capas con separación de funciones críticas y hardening sistemático.</p></article>
+        <article class="card fade"><h3>Lifecycle Governance</h3><p>Emisión, renovación, revocación y control operativo con trazabilidad audit-ready.</p></article>
+        <article class="card fade"><h3>Cryptographic Governance</h3><p>Políticas técnicas alineadas con riesgo, cumplimiento y sostenibilidad operativa.</p></article>
+        <article class="card fade"><h3>Zero Trust PKI Integration</h3><p>Identidades verificables para usuarios, dispositivos y cargas de trabajo.</p></article>
+        <article class="card fade"><h3>Post-Quantum Readiness</h3><p>Evaluación de exposición y hoja de ruta para transición criptográfica gradual.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Línea de Trabajo</h2>
       <div class="timeline">
-        <article class="timeline-item">
-          <h3>Diseño y hardening de arquitecturas PKI enterprise</h3>
-          <p>Definición de modelos escalables, segmentación por niveles de confianza y controles de seguridad sobre ciclo de vida de certificados.</p>
-        </article>
-        <article class="timeline-item">
-          <h3>Gobernanza criptográfica aplicada al negocio</h3>
-          <p>Transformación de requisitos regulatorios y de riesgo en políticas técnicas operables y auditables.</p>
-        </article>
-        <article class="timeline-item">
-          <h3>Preparación para escenarios de evolución criptográfica</h3>
-          <p>Análisis de impacto y estrategia para transición ordenada hacia modelos de mayor resiliencia, incluyendo readiness post-quantum.</p>
-        </article>
+        <div class="step"><h3>1. Assessment Arquitectónico</h3><p>Mapa de confianza actual, riesgos y deuda técnica priorizada.</p></div>
+        <div class="step"><h3>2. Diseño de Modelo Objetivo</h3><p>Topología, dominios, políticas de certificados y controles operativos.</p></div>
+        <div class="step"><h3>3. Ejecución y Hardening</h3><p>Roadmap realista para evolucionar sin romper operación ni cumplimiento.</p></div>
       </div>
-      <p class="quote">“No diseño PKI para hoy: diseño PKI para que siga siendo segura y operable dentro de 5-10 años.”</p>
     </section>
 
-    <section id="expertise" aria-labelledby="expertise-title">
-      <h2 id="expertise-title">Expertise técnico</h2>
-      <p class="section-intro">
-        Áreas en las que aporto mayor valor en arquitectura, gobernanza y toma de decisiones técnicas críticas.
-      </p>
-      <div class="grid">
-        <article class="card">
-          <h3>Enterprise PKI Architecture</h3>
-          <p>Topologías jerárquicas robustas, modelos de confianza y estrategias de continuidad para servicios de certificación.</p>
+    <section id="repos">
+      <h2>Repositorios Clave</h2>
+      <p class="intro">Una estructura clara: posicionamiento, arquitectura y tooling.</p>
+      <div class="repos">
+        <article class="repo"><h3>CertOps Toolkit</h3><p>CLI funcional para expiry, fingerprint, TLS probe e inventario con build MSI/tar.gz.</p><a href="https://github.com/salva-navarro/certops-toolkit" target="_blank" rel="noopener noreferrer">Abrir repositorio</a></article>
+        <article class="repo"><h3>Profile README</h3><p>Posicionamiento profesional y dirección técnica del portfolio.</p><a href="https://github.com/salva-navarro/salvanavarro" target="_blank" rel="noopener noreferrer">Abrir repositorio</a></article>
+        <article class="repo"><h3>Portfolio Site</h3><p>Presencia profesional + demos interactivas de concepto PKI.</p><a href="https://github.com/salva-navarro/salva-navarro.github.io" target="_blank" rel="noopener noreferrer">Abrir repositorio</a></article>
+        <article class="repo"><h3>Enterprise PKI Principles</h3><p>Marco de diseño y principios arquitectónicos en inglés.</p><a href="https://github.com/salva-navarro/enterprise-pki-architecture-principles" target="_blank" rel="noopener noreferrer">Abrir repositorio</a></article>
+        <article class="repo"><h3>Arquitectura PKI Empresarial</h3><p>Contenido técnico en español con enfoque práctico.</p><a href="https://github.com/salva-navarro/arquitectura-pki-empresarial" target="_blank" rel="noopener noreferrer">Abrir repositorio</a></article>
+      </div>
+    </section>
+
+    <section id="demos">
+      <h2>Mini Demos Interactivas</h2>
+      <p class="intro">Pruebas rápidas en caliente para mostrar criterio técnico, sin backend ni datos sensibles.</p>
+      <div class="demo-wrap">
+        <article class="demo">
+          <h3>Demo 1: Cert Expiry Radar</h3>
+          <label for="expiryDate">Fecha de expiración del certificado</label>
+          <input id="expiryDate" type="date" />
+          <button id="checkExpiry">Calcular riesgo</button>
+          <div id="expiryOut" class="output">Introduce una fecha y calcula el nivel de urgencia.</div>
         </article>
-        <article class="card">
-          <h3>Microsoft ADCS Multi-Tier</h3>
-          <p>Diseño por capas, separación de funciones críticas y criterios de hardening para minimizar superficie de exposición.</p>
-        </article>
-        <article class="card">
-          <h3>Certificate Lifecycle Management</h3>
-          <p>Automatización, control y trazabilidad del ciclo de vida de certificados para reducir riesgo operativo.</p>
-        </article>
-        <article class="card">
-          <h3>Cryptographic Governance</h3>
-          <p>Políticas y estándares internos alineados con necesidades de negocio, cumplimiento y resiliencia técnica.</p>
-        </article>
-        <article class="card">
-          <h3>Zero Trust PKI Integration</h3>
-          <p>Integración de identidades, dispositivos y servicios bajo principios de verificación continua y mínimo privilegio.</p>
-        </article>
-        <article class="card">
-          <h3>Post-Quantum Readiness</h3>
-          <p>Evaluación de exposición criptográfica y construcción de hoja de ruta para transición progresiva.</p>
+        <article class="demo">
+          <h3>Demo 2: OID Policy Check</h3>
+          <label for="oidInput">Lista de OIDs (uno por línea)</label>
+          <textarea id="oidInput" placeholder="1.3.6.1.5.5.7.3.1&#10;1.3.6.1.4.1.311.20.2.2"></textarea>
+          <button id="checkOid">Evaluar consistencia</button>
+          <div id="oidOut" class="output">Pega OIDs para validar formato y detectar enterprise/private arcs.</div>
         </article>
       </div>
     </section>
 
-    <section id="servicios" aria-labelledby="servicios-title">
-      <h2 id="servicios-title">Cómo puedo aportar valor</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Assessment de arquitectura PKI</h3>
-          <p>Revisión estructural del entorno actual, identificación de riesgos y propuesta priorizada de mejoras.</p>
-        </article>
-        <article class="card">
-          <h3>Diseño de roadmap técnico</h3>
-          <p>Plan de evolución realista para modernizar capacidades PKI sin comprometer operación ni cumplimiento.</p>
-        </article>
-        <article class="card">
-          <h3>Soporte en decisiones críticas</h3>
-          <p>Acompañamiento técnico en decisiones de diseño que afectan seguridad, escalabilidad y sostenibilidad.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="publicaciones" aria-labelledby="publicaciones-title">
-      <h2 id="publicaciones-title">Publicaciones y recursos</h2>
-      <p class="section-intro">Contenido técnico y notas de arquitectura disponibles en GitHub.</p>
-      <div class="grid">
-        <article class="card">
-          <h3>GitHub Profile</h3>
-          <p>
-            Acceso a repositorios, documentación técnica y líneas de trabajo.
-            <br><a href="https://github.com/salva-navarro" target="_blank" rel="noopener noreferrer">github.com/salva-navarro</a>
-          </p>
-        </article>
-        <article class="card">
-          <h3>Enterprise PKI Architecture Principles</h3>
-          <p>
-            Principios de diseño para construir infraestructuras PKI robustas y escalables.
-            <br><a href="https://github.com/salva-navarro/enterprise-pki-architecture-principles" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
-          </p>
-        </article>
-        <article class="card">
-          <h3>Línea editorial</h3>
-          <p>Profundidad técnica, rigor arquitectónico y foco total en implementación real, sin ruido comercial.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contacto" aria-labelledby="contacto-title">
-      <h2 id="contacto-title">Contacto</h2>
-      <p class="section-intro">
-        Si necesitas reforzar o evolucionar tu arquitectura PKI, estaré encantado de revisar tu caso y ayudarte a definir el siguiente paso.
-      </p>
-      <div class="cta">
-        <p>Disponible para colaboraciones técnicas y proyectos de arquitectura PKI.</p>
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p class="intro">Disponible para colaboraciones técnicas y proyectos de arquitectura PKI.</p>
+      <div class="actions">
         <a class="btn btn-primary" href="https://github.com/salva-navarro" target="_blank" rel="noopener noreferrer">Contactar vía GitHub</a>
       </div>
     </section>
-
-    <footer>
-      <span>© <span id="year"></span> Salva Navarro — Enterprise PKI Architect</span>
-      <span>España · Arquitectura PKI · Gobernanza criptográfica</span>
-    </footer>
   </main>
 
+  <footer>
+    <div class="container"> 2026 Salva Navarro · PKI Architecture · Cryptographic Governance · Spain</div>
+  </footer>
+
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const expiryBtn = document.getElementById('checkExpiry');
+    const expiryInput = document.getElementById('expiryDate');
+    const expiryOut = document.getElementById('expiryOut');
+
+    expiryBtn.addEventListener('click', () => {
+      if (!expiryInput.value) {
+        expiryOut.textContent = 'Selecciona una fecha válida.';
+        expiryOut.style.color = '#b6c2d9';
+        return;
+      }
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const exp = new Date(expiryInput.value + 'T00:00:00');
+      const diffDays = Math.ceil((exp - today) / (1000 * 60 * 60 * 24));
+
+      let level = 'OK';
+      let color = '#3ecf8e';
+      if (diffDays <= 0) {
+        level = 'EXPIRADO';
+        color = '#ff6b6b';
+      } else if (diffDays <= 30) {
+        level = 'CRITICO';
+        color = '#ff6b6b';
+      } else if (diffDays <= 90) {
+        level = 'ALERTA';
+        color = '#f2b45a';
+      }
+
+      expiryOut.style.color = color;
+      expiryOut.textContent = `Dias restantes: ${diffDays}\nNivel: ${level}\nAccion recomendada: ${level === 'OK' ? 'Planificar renovacion normal.' : 'Iniciar renovacion y validacion de cadena.'}`;
+    });
+
+    const oidBtn = document.getElementById('checkOid');
+    const oidInput = document.getElementById('oidInput');
+    const oidOut = document.getElementById('oidOut');
+
+    oidBtn.addEventListener('click', () => {
+      const lines = oidInput.value.split('\n').map(v => v.trim()).filter(Boolean);
+      if (!lines.length) {
+        oidOut.textContent = 'Introduce al menos un OID.';
+        oidOut.style.color = '#b6c2d9';
+        return;
+      }
+
+      const re = /^\d+(\.\d+)+$/;
+      const result = lines.map(oid => {
+        const valid = re.test(oid);
+        const enterprise = oid.startsWith('1.3.6.1.4.1.');
+        if (!valid) return `${oid} -> INVALIDO`;
+        if (enterprise) return `${oid} -> PRIVATE ENTERPRISE ARC`;
+        return `${oid} -> STANDARD ARC`;
+      });
+
+      const invalid = result.some(r => r.includes('INVALIDO'));
+      oidOut.style.color = invalid ? '#ff6b6b' : '#3ecf8e';
+      oidOut.textContent = result.join('\n');
+    });
   </script>
 </body>
 </html>
