@@ -227,24 +227,53 @@
     </div>
   </section>
 
+  <!-- ── AI Integration ───────────────────────────────── -->
+  <section>
+    <h2>🤖 Integración IA — Instrucción para Copilot / ChatGPT / Cursor</h2>
+    <p style="color:#555;font-size:.9rem;margin-bottom:1rem">
+      Copia y pega esta instrucción al inicio de cualquier prompt de IA para que use exactamente esta marca:
+    </p>
+    <pre><code>Usa los design tokens de la marca Salva Navarro desde:
+
+  CSS custom properties: https://salva-navarro.github.io/brand-kit/brand-tokens.css
+  Design tokens JSON:    https://salva-navarro.github.io/brand-kit/brand-tokens.json
+
+Siempre importa brand-tokens.css y usa var(--color-primary), var(--gradient-hero), etc.
+Nunca uses valores hex directamente. Tipografía: Montserrat (titulares) + Inter (cuerpo).</code></pre>
+    <div style="margin-top:.75rem;display:flex;gap:.75rem;flex-wrap:wrap">
+      <a class="asset-link" href="brand-tokens.css">📄 brand-tokens.css</a>
+      <a class="asset-link" href="brand-tokens.json">📋 brand-tokens.json</a>
+    </div>
+  </section>
+
   <!-- ── CDN Usage ──────────────────────────────────────── -->
   <section>
-    <h2>Uso como Referencia (CDN · GitHub Pages)</h2>
-    <pre><code>/* CSS — variables de marca */
-:root {
-  --brand-primary:   #2F4F9F;
-  --brand-secondary: #D4A017;
-  --brand-dark:      #1C1C1C;
-  --brand-light:     #FFFFFF;
+    <h2>Uso en Proyectos (CSS Import)</h2>
+    <pre><code>/* 1. Importar tokens de marca en tu CSS */
+@import url('https://salva-navarro.github.io/brand-kit/brand-tokens.css');
+
+/* 2. Usar los custom properties */
+.mi-boton {
+  background: var(--color-primary);
+  color: var(--color-light);
+  font-family: var(--font-heading);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-primary-sm);
+  transition: var(--transition-base);
+}
+.mi-boton:hover {
+  background: var(--color-primary-shade);
+  box-shadow: var(--shadow-primary-md);
 }
 
-/* SVG logo desde GitHub Pages */
+/* 3. Logo desde CDN */
 &lt;img src="https://salva-navarro.github.io/brand-kit/01_LOGO_VARIATIONS/style_modern/logo_001.svg" /&gt;
 
-/* Paleta JSON (fetch) */
-fetch('https://salva-navarro.github.io/brand-kit/02_COLOR_PALETTES/palette_01_primary.json')
+/* 4. Tokens JSON (para tooling, IA, Figma plugins) */
+fetch('https://salva-navarro.github.io/brand-kit/brand-tokens.json')
   .then(r => r.json())
-  .then(tokens => console.log(tokens));</code></pre>
+  .then(tokens => console.log(tokens.colors.primary.base.value));
+  // → "#2F4F9F"</code></pre>
   </section>
 
   <!-- ── Download ───────────────────────────────────────── -->

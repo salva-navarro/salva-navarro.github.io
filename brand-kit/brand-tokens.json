@@ -1,0 +1,361 @@
+{
+  "$schema": "https://salva-navarro.github.io/brand-kit/brand-tokens.json",
+  "$meta": {
+    "name": "Salva Navarro — PKI Tools / SnPKI IdentiCert Brand System",
+    "version": "2.0.0",
+    "date": "2026-04-02",
+    "author": "Salva Navarro",
+    "website": "https://salva-navarro.github.io",
+    "brand_kit_cdn": "https://salva-navarro.github.io/brand-kit/",
+    "css_tokens": "https://salva-navarro.github.io/brand-kit/brand-tokens.css",
+    "logo_modern": "https://salva-navarro.github.io/brand-kit/01_LOGO_VARIATIONS/style_modern/logo_001.svg",
+    "logo_classic": "https://salva-navarro.github.io/brand-kit/01_LOGO_VARIATIONS/style_classic/logo_001.svg",
+    "logo_minimalist": "https://salva-navarro.github.io/brand-kit/01_LOGO_VARIATIONS/style_minimalist/logo_001.svg",
+    "asset_pack": "https://salva-navarro.github.io/brand-kit/PKI_Tools_SuperPack_AI_v2.zip",
+    "description": "Complete design token system for all Salva Navarro projects. Import brand-tokens.css for CSS variables. Use this JSON for AI-driven design decisions, code generation or design tooling integration."
+  },
+
+  "colors": {
+    "primary": {
+      "$description": "PKI Blue — main identity color. Use for headings, primary buttons, links, key UI elements.",
+      "base":    { "value": "#2F4F9F", "css": "--color-primary" },
+      "tint":    { "value": "#4B70C9", "css": "--color-primary-tint",  "use": "hover, active states" },
+      "shade":   { "value": "#1E3470", "css": "--color-primary-shade", "use": "pressed, dark emphasis" },
+      "pale":    { "value": "#E8EEF9", "css": "--color-primary-pale",  "use": "soft backgrounds, chips" },
+      "50":  "#F0F4FC",
+      "100": "#D6E0F5",
+      "200": "#ADBFEB",
+      "300": "#7E9BDE",
+      "400": "#4B70C9",
+      "500": "#2F4F9F",
+      "600": "#263E82",
+      "700": "#1E3470",
+      "800": "#162757",
+      "900": "#0E1A3D"
+    },
+    "secondary": {
+      "$description": "Heritage Gold — accent color. Use for badges, highlights, CTAs secondary, decorative accents.",
+      "base":    { "value": "#D4A017", "css": "--color-secondary" },
+      "tint":    { "value": "#E8BC45", "css": "--color-secondary-tint",  "use": "hover gold states" },
+      "shade":   { "value": "#A07C10", "css": "--color-secondary-shade", "use": "pressed gold states" },
+      "pale":    { "value": "#FBF4E0", "css": "--color-secondary-pale",  "use": "soft gold backgrounds" },
+      "50":  "#FEFAED",
+      "100": "#FBF0C8",
+      "200": "#F5DC87",
+      "300": "#E8BC45",
+      "400": "#D4A017",
+      "500": "#B88A12",
+      "600": "#A07C10",
+      "700": "#7A5E0C",
+      "800": "#564209",
+      "900": "#312506"
+    },
+    "neutral": {
+      "$description": "Neutral grays for text, borders, backgrounds.",
+      "dark":       { "value": "#1C1C1C", "css": "--color-dark",       "use": "body text, darkest backgrounds" },
+      "dark-soft":  { "value": "#2E2E2E", "css": "--color-dark-soft" },
+      "dark-muted": { "value": "#444444", "css": "--color-dark-muted" },
+      "gray-700":   { "value": "#555555", "css": "--color-gray-700" },
+      "gray-600":   { "value": "#666666", "css": "--color-gray-600" },
+      "gray-500":   { "value": "#888888", "css": "--color-gray-500",   "use": "secondary text, placeholders" },
+      "gray-400":   { "value": "#AAAAAA", "css": "--color-gray-400" },
+      "gray-300":   { "value": "#CCCCCC", "css": "--color-gray-300",   "use": "borders, dividers" },
+      "gray-200":   { "value": "#E0E0E0", "css": "--color-gray-200" },
+      "gray-100":   { "value": "#F0F0F0", "css": "--color-gray-100",   "use": "subtle backgrounds" },
+      "gray-50":    { "value": "#F8F8F8", "css": "--color-gray-50" },
+      "light":      { "value": "#FFFFFF", "css": "--color-light",      "use": "cards, page background" }
+    },
+    "semantic": {
+      "$description": "Functional colors for status messages, alerts, feedback.",
+      "success":        { "value": "#27AE60", "css": "--color-success" },
+      "success-tint":   { "value": "#2ECC71", "css": "--color-success-tint" },
+      "success-shade":  { "value": "#1E8449", "css": "--color-success-shade" },
+      "success-pale":   { "value": "#E8F8EF", "css": "--color-success-pale" },
+      "warning":        { "value": "#E67E22", "css": "--color-warning" },
+      "warning-tint":   { "value": "#F39C12", "css": "--color-warning-tint" },
+      "warning-shade":  { "value": "#CA6F1E", "css": "--color-warning-shade" },
+      "warning-pale":   { "value": "#FEF5E7", "css": "--color-warning-pale" },
+      "error":          { "value": "#C0392B", "css": "--color-error" },
+      "error-tint":     { "value": "#E74C3C", "css": "--color-error-tint" },
+      "error-shade":    { "value": "#A93226", "css": "--color-error-shade" },
+      "error-pale":     { "value": "#FDEDEC", "css": "--color-error-pale" },
+      "info":           { "value": "#2980B9", "css": "--color-info" },
+      "info-tint":      { "value": "#3498DB", "css": "--color-info-tint" },
+      "info-shade":     { "value": "#1F618D", "css": "--color-info-shade" },
+      "info-pale":      { "value": "#EBF5FB", "css": "--color-info-pale" }
+    },
+    "dark_mode": {
+      "$description": "Dark UI theme palette used in portfolio and dashboard dark surfaces.",
+      "bg":          { "value": "#07111F", "css": "--color-dark-bg" },
+      "bg-2":        { "value": "#0D1727", "css": "--color-dark-bg-2" },
+      "surface":     { "value": "#0F1D33", "css": "--color-dark-surface" },
+      "surface-2":   { "value": "#142544", "css": "--color-dark-surface-2" },
+      "text":        { "value": "#EAF2FF", "css": "--color-dark-text" },
+      "text-muted":  { "value": "#90A4BF", "css": "--color-dark-muted-text" },
+      "border":      { "value": "rgba(132,162,199,0.20)", "css": "--color-dark-border" }
+    }
+  },
+
+  "gradients": {
+    "$description": "Named gradients for backgrounds, overlays and decorative use. Reference via CSS variable.",
+    "primary":              { "css": "--gradient-primary",              "value": "linear-gradient(135deg, #2F4F9F 0%, #1E3470 100%)" },
+    "primary-horizontal":   { "css": "--gradient-primary-horizontal",  "value": "linear-gradient(90deg, #2F4F9F 0%, #1E3470 100%)" },
+    "primary-light":        { "css": "--gradient-primary-light",       "value": "linear-gradient(135deg, #4B70C9 0%, #2F4F9F 100%)" },
+    "secondary":            { "css": "--gradient-secondary",           "value": "linear-gradient(135deg, #E8BC45 0%, #D4A017 60%, #A07C10 100%)" },
+    "secondary-horizontal": { "css": "--gradient-secondary-horizontal","value": "linear-gradient(90deg, #D4A017 0%, #A07C10 100%)" },
+    "hero":                 { "css": "--gradient-hero",                "value": "linear-gradient(150deg, #0E1A3D 0%, #1E3470 40%, #2F4F9F 100%)" },
+    "hero-radial":          { "css": "--gradient-hero-radial",         "value": "radial-gradient(circle at 25% 25%, rgba(75,112,201,0.35) 0%, transparent 55%), radial-gradient(circle at 80% 10%, rgba(212,160,23,0.20) 0%, transparent 40%), linear-gradient(180deg, #07111F 0%, #0D1727 100%)" },
+    "surface":              { "css": "--gradient-surface",             "value": "linear-gradient(180deg, #FAFBFC 0%, #FFFFFF 100%)" },
+    "surface-blue":         { "css": "--gradient-surface-blue",        "value": "linear-gradient(180deg, #F0F4FC 0%, #FAFBFF 100%)" },
+    "surface-gold":         { "css": "--gradient-surface-gold",        "value": "linear-gradient(180deg, #FBF4E0 0%, #FFFDF5 100%)" },
+    "overlay-bottom":       { "css": "--gradient-overlay-bottom",      "value": "linear-gradient(to top, rgba(14,26,61,0.85) 0%, transparent 100%)" },
+    "overlay-dark":         { "css": "--gradient-overlay-dark",        "value": "linear-gradient(135deg, rgba(14,26,61,0.95) 0%, rgba(30,52,112,0.80) 100%)" },
+    "text-primary":         { "css": "--gradient-text-primary",        "value": "linear-gradient(135deg, #4B70C9 0%, #2F4F9F 100%)", "use": "Gradient text via background-clip: text" },
+    "text-gold":            { "css": "--gradient-text-gold",           "value": "linear-gradient(135deg, #E8BC45 0%, #D4A017 100%)", "use": "Gradient text via background-clip: text" }
+  },
+
+  "typography": {
+    "families": {
+      "heading": { "value": "'Montserrat', 'Segoe UI', Arial, sans-serif", "css": "--font-heading", "use": "Titles, headings, labels, navigation", "weights": [400, 500, 600, 700, 800], "google_import": "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" },
+      "body":    { "value": "'Inter', 'Segoe UI', Roboto, Arial, sans-serif", "css": "--font-body", "use": "Body text, UI labels, paragraphs", "weights": [300, 400, 500, 600], "google_import": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" },
+      "mono":    { "value": "'JetBrains Mono', 'Consolas', 'Courier New', monospace", "css": "--font-mono", "use": "Code blocks, certificate data, technical strings", "weights": [400, 600], "google_import": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" }
+    },
+    "scale": {
+      "$description": "All sizes in rem. Base = 16px.",
+      "xs":   { "rem": "0.75rem",  "px": 12,  "css": "--text-xs",   "use": "Labels, chips, captions" },
+      "sm":   { "rem": "0.875rem", "px": 14,  "css": "--text-sm",   "use": "Small body, table text" },
+      "base": { "rem": "1rem",     "px": 16,  "css": "--text-base", "use": "Body text principal" },
+      "lg":   { "rem": "1.125rem", "px": 18,  "css": "--text-lg",   "use": "Body text large" },
+      "xl":   { "rem": "1.25rem",  "px": 20,  "css": "--text-xl",   "use": "Small subtitles" },
+      "2xl":  { "rem": "1.5rem",   "px": 24,  "css": "--text-2xl",  "use": "Subtitles" },
+      "3xl":  { "rem": "1.875rem", "px": 30,  "css": "--text-3xl",  "use": "Section titles" },
+      "4xl":  { "rem": "2.25rem",  "px": 36,  "css": "--text-4xl",  "use": "Page titles" },
+      "5xl":  { "rem": "3rem",     "px": 48,  "css": "--text-5xl",  "use": "Hero title" },
+      "6xl":  { "rem": "3.75rem",  "px": 60,  "css": "--text-6xl",  "use": "Display large" },
+      "7xl":  { "rem": "4.5rem",   "px": 72,  "css": "--text-7xl",  "use": "Display hero XL" }
+    },
+    "weights": {
+      "light":     { "value": 300, "css": "--font-light" },
+      "regular":   { "value": 400, "css": "--font-regular" },
+      "medium":    { "value": 500, "css": "--font-medium" },
+      "semibold":  { "value": 600, "css": "--font-semibold" },
+      "bold":      { "value": 700, "css": "--font-bold" },
+      "extrabold": { "value": 800, "css": "--font-extrabold" }
+    },
+    "leading": {
+      "none":    { "value": 1,     "css": "--leading-none" },
+      "tight":   { "value": 1.25,  "css": "--leading-tight" },
+      "snug":    { "value": 1.375, "css": "--leading-snug" },
+      "normal":  { "value": 1.5,   "css": "--leading-normal" },
+      "relaxed": { "value": 1.625, "css": "--leading-relaxed" },
+      "loose":   { "value": 2,     "css": "--leading-loose" }
+    },
+    "tracking": {
+      "tighter": { "value": "-0.05em",  "css": "--tracking-tighter" },
+      "tight":   { "value": "-0.025em", "css": "--tracking-tight" },
+      "normal":  { "value": "0",        "css": "--tracking-normal" },
+      "wide":    { "value": "0.025em",  "css": "--tracking-wide" },
+      "wider":   { "value": "0.05em",   "css": "--tracking-wider" },
+      "widest":  { "value": "0.1em",    "css": "--tracking-widest" },
+      "caps":    { "value": "0.08em",   "css": "--tracking-caps", "use": "uppercase labels" }
+    },
+    "roles": {
+      "$description": "Recommended combination of family + size + weight for each role.",
+      "display":    { "font": "heading", "size": "6xl",  "weight": "extrabold", "leading": "none",   "tracking": "tight"  },
+      "h1":         { "font": "heading", "size": "5xl",  "weight": "bold",      "leading": "tight",  "tracking": "tight"  },
+      "h2":         { "font": "heading", "size": "4xl",  "weight": "bold",      "leading": "tight",  "tracking": "tight"  },
+      "h3":         { "font": "heading", "size": "3xl",  "weight": "semibold",  "leading": "snug",   "tracking": "normal" },
+      "h4":         { "font": "heading", "size": "2xl",  "weight": "semibold",  "leading": "snug",   "tracking": "normal" },
+      "h5":         { "font": "heading", "size": "xl",   "weight": "semibold",  "leading": "normal", "tracking": "normal" },
+      "h6":         { "font": "heading", "size": "lg",   "weight": "semibold",  "leading": "normal", "tracking": "wide"   },
+      "body-lg":    { "font": "body",    "size": "lg",   "weight": "regular",   "leading": "relaxed","tracking": "normal" },
+      "body":       { "font": "body",    "size": "base", "weight": "regular",   "leading": "normal", "tracking": "normal" },
+      "body-sm":    { "font": "body",    "size": "sm",   "weight": "regular",   "leading": "normal", "tracking": "normal" },
+      "label":      { "font": "heading", "size": "xs",   "weight": "semibold",  "leading": "none",   "tracking": "caps"   },
+      "caption":    { "font": "body",    "size": "xs",   "weight": "regular",   "leading": "normal", "tracking": "normal" },
+      "code":       { "font": "mono",    "size": "sm",   "weight": "regular",   "leading": "relaxed","tracking": "normal" },
+      "nav":        { "font": "heading", "size": "sm",   "weight": "medium",    "leading": "none",   "tracking": "wide"   },
+      "button":     { "font": "heading", "size": "sm",   "weight": "semibold",  "leading": "none",   "tracking": "wide"   }
+    }
+  },
+
+  "spacing": {
+    "$description": "4px base scale. Values in rem (1rem = 16px).",
+    "0":    { "rem": "0",      "px": 0,   "css": "--space-0" },
+    "px":   { "rem": "1px",    "px": 1,   "css": "--space-px" },
+    "0.5":  { "rem": "0.125rem","px": 2,  "css": "--space-0-5" },
+    "1":    { "rem": "0.25rem", "px": 4,  "css": "--space-1" },
+    "1.5":  { "rem": "0.375rem","px": 6,  "css": "--space-1-5" },
+    "2":    { "rem": "0.5rem",  "px": 8,  "css": "--space-2" },
+    "2.5":  { "rem": "0.625rem","px": 10, "css": "--space-2-5" },
+    "3":    { "rem": "0.75rem", "px": 12, "css": "--space-3" },
+    "4":    { "rem": "1rem",    "px": 16, "css": "--space-4" },
+    "5":    { "rem": "1.25rem", "px": 20, "css": "--space-5" },
+    "6":    { "rem": "1.5rem",  "px": 24, "css": "--space-6" },
+    "8":    { "rem": "2rem",    "px": 32, "css": "--space-8" },
+    "10":   { "rem": "2.5rem",  "px": 40, "css": "--space-10" },
+    "12":   { "rem": "3rem",    "px": 48, "css": "--space-12" },
+    "16":   { "rem": "4rem",    "px": 64, "css": "--space-16" },
+    "20":   { "rem": "5rem",    "px": 80, "css": "--space-20" },
+    "24":   { "rem": "6rem",    "px": 96, "css": "--space-24" },
+    "32":   { "rem": "8rem",    "px": 128,"css": "--space-32" }
+  },
+
+  "borderRadius": {
+    "none": { "value": "0",       "px": 0,    "css": "--radius-none" },
+    "sm":   { "value": "0.25rem", "px": 4,    "css": "--radius-sm",  "use": "inputs, small tags" },
+    "md":   { "value": "0.5rem",  "px": 8,    "css": "--radius-md",  "use": "buttons, inputs" },
+    "lg":   { "value": "0.75rem", "px": 12,   "css": "--radius-lg",  "use": "small cards" },
+    "xl":   { "value": "1rem",    "px": 16,   "css": "--radius-xl",  "use": "cards" },
+    "2xl":  { "value": "1.125rem","px": 18,   "css": "--radius-2xl", "use": "large cards" },
+    "3xl":  { "value": "1.5rem",  "px": 24,   "css": "--radius-3xl", "use": "modals, panels" },
+    "full": { "value": "9999px",  "px": 9999, "css": "--radius-full","use": "chips, avatars, pills" }
+  },
+
+  "shadows": {
+    "$description": "Box shadows with neutral and brand-colored variants. Brand shadows use primary blue hue for coherence.",
+    "none":          { "value": "none",                                                "css": "--shadow-none" },
+    "xs":            { "value": "0 1px 2px rgba(0,0,0,0.06)",                          "css": "--shadow-xs" },
+    "sm":            { "value": "0 2px 6px rgba(0,0,0,0.08)",                          "css": "--shadow-sm" },
+    "md":            { "value": "0 4px 16px rgba(0,0,0,0.10)",                         "css": "--shadow-md",  "use": "cards, dropdowns" },
+    "lg":            { "value": "0 8px 32px rgba(0,0,0,0.12)",                         "css": "--shadow-lg",  "use": "elevated panels" },
+    "xl":            { "value": "0 18px 45px rgba(2,10,22,0.16)",                      "css": "--shadow-xl",  "use": "modals" },
+    "2xl":           { "value": "0 32px 64px rgba(2,10,22,0.20)",                      "css": "--shadow-2xl" },
+    "primary-sm":    { "value": "0 2px 10px rgba(47,79,159,0.20)",                     "css": "--shadow-primary-sm" },
+    "primary-md":    { "value": "0 4px 20px rgba(47,79,159,0.28)",                     "css": "--shadow-primary-md",  "use": "hover on primary buttons/cards" },
+    "primary-lg":    { "value": "0 8px 40px rgba(47,79,159,0.35)",                     "css": "--shadow-primary-lg" },
+    "secondary-sm":  { "value": "0 2px 10px rgba(212,160,23,0.25)",                    "css": "--shadow-secondary-sm" },
+    "secondary-md":  { "value": "0 4px 20px rgba(212,160,23,0.32)",                    "css": "--shadow-secondary-md" },
+    "glow-primary":  { "value": "0 0 0 3px rgba(47,79,159,0.30)",                      "css": "--shadow-glow-primary",  "use": "focus ring on primary elements" },
+    "glow-secondary":{ "value": "0 0 0 3px rgba(212,160,23,0.35)",                     "css": "--shadow-glow-secondary" },
+    "glow-error":    { "value": "0 0 0 3px rgba(192,57,43,0.30)",                      "css": "--shadow-glow-error" },
+    "focus":         { "value": "0 0 0 2px #FFFFFF, 0 0 0 4px #2F4F9F",               "css": "--shadow-focus",      "use": "keyboard focus indicator (light bg)" },
+    "focus-dark":    { "value": "0 0 0 2px #07111F, 0 0 0 4px #4B70C9",               "css": "--shadow-focus-dark",  "use": "keyboard focus indicator (dark bg)" },
+    "inset":         { "value": "inset 0 2px 4px rgba(0,0,0,0.06)",                    "css": "--shadow-inset" }
+  },
+
+  "transitions": {
+    "duration": {
+      "instant": { "value": "75ms",  "css": "--duration-instant" },
+      "fast":    { "value": "150ms", "css": "--duration-fast",    "use": "micro interactions, color changes" },
+      "base":    { "value": "250ms", "css": "--duration-base",    "use": "most UI transitions" },
+      "slow":    { "value": "400ms", "css": "--duration-slow",    "use": "panels, overlays" },
+      "slower":  { "value": "600ms", "css": "--duration-slower" },
+      "slowest": { "value": "1000ms","css": "--duration-slowest", "use": "page transitions, loaders" }
+    },
+    "easing": {
+      "linear":  { "value": "linear",                          "css": "--ease-linear" },
+      "in":      { "value": "cubic-bezier(0.4, 0, 1, 1)",      "css": "--ease-in" },
+      "out":     { "value": "cubic-bezier(0, 0, 0.2, 1)",      "css": "--ease-out",    "use": "elements entering screen" },
+      "in-out":  { "value": "cubic-bezier(0.4, 0, 0.2, 1)",    "css": "--ease-in-out", "use": "general transitions" },
+      "spring":  { "value": "cubic-bezier(0.34, 1.56, 0.64, 1)","css": "--ease-spring","use": "playful, bouncy interactions" },
+      "smooth":  { "value": "cubic-bezier(0.25, 0.46, 0.45, 0.94)","css": "--ease-smooth" }
+    },
+    "presets": {
+      "base":      { "value": "all 250ms cubic-bezier(0.4,0,0.2,1)",   "css": "--transition-base" },
+      "fast":      { "value": "all 150ms cubic-bezier(0,0,0.2,1)",     "css": "--transition-fast" },
+      "color":     { "value": "color 150ms, background-color 150ms, border-color 150ms", "css": "--transition-color" },
+      "shadow":    { "value": "box-shadow 250ms cubic-bezier(0,0,0.2,1)", "css": "--transition-shadow" },
+      "transform": { "value": "transform 250ms cubic-bezier(0.34,1.56,0.64,1)","css": "--transition-transform" },
+      "opacity":   { "value": "opacity 250ms cubic-bezier(0.4,0,0.2,1)",  "css": "--transition-opacity" }
+    },
+    "keyframes": {
+      "brand-fade-in":      "from { opacity: 0 } to { opacity: 1 }",
+      "brand-slide-up":     "from { opacity: 0; transform: translateY(16px) } to { opacity: 1; transform: translateY(0) }",
+      "brand-slide-down":   "from { opacity: 0; transform: translateY(-16px) } to { opacity: 1; transform: translateY(0) }",
+      "brand-scale-in":     "from { opacity: 0; transform: scale(0.92) } to { opacity: 1; transform: scale(1) }",
+      "brand-pulse-primary":"0%,100% { box-shadow: 0 0 0 0 rgba(47,79,159,0.5) } 50% { box-shadow: 0 0 0 12px rgba(47,79,159,0) }",
+      "brand-spin":         "to { transform: rotate(360deg) }"
+    }
+  },
+
+  "zIndex": {
+    "hide":     { "value": -1,    "css": "--z-hide" },
+    "base":     { "value": 0,     "css": "--z-base" },
+    "raised":   { "value": 10,    "css": "--z-raised" },
+    "dropdown": { "value": 100,   "css": "--z-dropdown" },
+    "sticky":   { "value": 200,   "css": "--z-sticky" },
+    "banner":   { "value": 250,   "css": "--z-banner" },
+    "overlay":  { "value": 300,   "css": "--z-overlay" },
+    "modal":    { "value": 400,   "css": "--z-modal" },
+    "popover":  { "value": 450,   "css": "--z-popover" },
+    "toast":    { "value": 500,   "css": "--z-toast" },
+    "tooltip":  { "value": 600,   "css": "--z-tooltip" },
+    "top":      { "value": 9999,  "css": "--z-top" }
+  },
+
+  "breakpoints": {
+    "$description": "Min-width breakpoints. Use in media queries: @media (min-width: 640px)",
+    "xs":  { "px": 480,  "value": "480px"  },
+    "sm":  { "px": 640,  "value": "640px"  },
+    "md":  { "px": 768,  "value": "768px"  },
+    "lg":  { "px": 1024, "value": "1024px" },
+    "xl":  { "px": 1280, "value": "1280px" },
+    "2xl": { "px": 1536, "value": "1536px" }
+  },
+
+  "assets": {
+    "$description": "CDN URLs for logo, icon and pattern assets in this brand kit.",
+    "base_cdn": "https://salva-navarro.github.io/brand-kit",
+    "logos": {
+      "modern": {
+        "$description": "50 modern geometric logo variations",
+        "url_pattern": "https://salva-navarro.github.io/brand-kit/01_LOGO_VARIATIONS/style_modern/logo_{NNN}.svg",
+        "example": "https://salva-navarro.github.io/brand-kit/01_LOGO_VARIATIONS/style_modern/logo_001.svg"
+      },
+      "classic": {
+        "$description": "40 classic serif logo variations",
+        "url_pattern": "https://salva-navarro.github.io/brand-kit/01_LOGO_VARIATIONS/style_classic/logo_{NNN}.svg",
+        "example": "https://salva-navarro.github.io/brand-kit/01_LOGO_VARIATIONS/style_classic/logo_001.svg"
+      },
+      "minimalist": {
+        "$description": "35 clean minimalist logo variations",
+        "url_pattern": "https://salva-navarro.github.io/brand-kit/01_LOGO_VARIATIONS/style_minimalist/logo_{NNN}.svg",
+        "example": "https://salva-navarro.github.io/brand-kit/01_LOGO_VARIATIONS/style_minimalist/logo_001.svg"
+      }
+    },
+    "icons": {
+      "$description": "120+ SVG icons with gradient fills. Certificate, shield, lock, key, user, data, analytics, system categories.",
+      "url_pattern": "https://salva-navarro.github.io/brand-kit/05_ICON_SETS/icon_{name}.svg",
+      "examples": [
+        "https://salva-navarro.github.io/brand-kit/05_ICON_SETS/icon_413d_certificate.svg",
+        "https://salva-navarro.github.io/brand-kit/05_ICON_SETS/icon_423d_shield.svg",
+        "https://salva-navarro.github.io/brand-kit/05_ICON_SETS/icon_433d_lock.svg"
+      ]
+    },
+    "patterns": {
+      "$description": "90 SVG background patterns: dots, grid, waves, diagonal, hexagon, circles, lines.",
+      "url_pattern": "https://salva-navarro.github.io/brand-kit/06_PATTERNS/pattern_{NN}.svg",
+      "examples": [
+        "https://salva-navarro.github.io/brand-kit/06_PATTERNS/pattern_01.svg",
+        "https://salva-navarro.github.io/brand-kit/06_PATTERNS/pattern_02.svg"
+      ]
+    }
+  },
+
+  "ai_prompt_reference": {
+    "$description": "Instructions for AI systems on how to use this brand kit.",
+    "instruction": "When generating UI, CSS, HTML, React, Vue or any front-end code for Salva Navarro projects, ALWAYS import brand-tokens.css and use the CSS custom properties defined in this file. Never hardcode hex color values directly — always reference the CSS variable (e.g. var(--color-primary) not #2F4F9F). Default to Montserrat for headings and Inter for body text. Use the spacing scale from --space-* variables. Apply border-radius from --radius-* variables. For dark backgrounds/sections use the dark_mode palette. Gradients for hero/header sections should use var(--gradient-hero) or var(--gradient-primary).",
+    "import_line": "@import url('https://salva-navarro.github.io/brand-kit/brand-tokens.css');",
+    "quick_palette": {
+      "primary":   "#2F4F9F",
+      "secondary": "#D4A017",
+      "dark":      "#1C1C1C",
+      "light":     "#FFFFFF"
+    },
+    "do": [
+      "Import brand-tokens.css at the top of any stylesheet",
+      "Use CSS custom properties: var(--color-primary), var(--gradient-hero), etc.",
+      "Use Montserrat (heading) + Inter (body) as the font pair",
+      "Apply --radius-xl (16px) or --radius-2xl (18px) on cards",
+      "Use --shadow-primary-md on hover states for brand coherence",
+      "Reference logos via CDN: https://salva-navarro.github.io/brand-kit/01_LOGO_VARIATIONS/style_modern/logo_001.svg"
+    ],
+    "dont": [
+      "Do NOT hardcode hex values — use CSS variables",
+      "Do NOT use fonts other than Montserrat/Inter/JetBrains Mono without explicit request",
+      "Do NOT ignore the spacing scale — use --space-* variables",
+      "Do NOT create new shadows outside the defined system"
+    ]
+  }
+}
