@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://salva-navarro.github.io/sitemap.xml
